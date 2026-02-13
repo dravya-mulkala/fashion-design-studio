@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Container from '@/components/Container';
 import ProductCard from '@/components/ProductCard';
-import CategoryFilter from '@/components/CategoryFilter';
+import CategoryHamburger from '@/components/CategoryHamburger';
 import Button from '@/components/Button';
 import { categories, products } from '@/data/products';
 
@@ -10,6 +10,15 @@ export default function HomePage() {
 
   return (
     <>
+      <section className="border-b border-slate-200 bg-white py-4">
+        <Container className="space-y-3">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-700">Shop by Category</h2>
+          <div className="flex justify-start">
+            <CategoryHamburger categories={categories} />
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-gradient-to-b from-violet-100 to-slate-50 py-20">
         <Container className="space-y-6 text-center">
           <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Personal Boutique</p>
@@ -38,13 +47,6 @@ export default function HomePage() {
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        </Container>
-      </section>
-
-      <section className="pb-4">
-        <Container className="space-y-5">
-          <h2 className="text-2xl font-semibold text-slate-900">Shop by Category</h2>
-          <CategoryFilter categories={categories} activeCategory="All" />
         </Container>
       </section>
     </>
