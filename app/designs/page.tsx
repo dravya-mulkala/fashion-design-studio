@@ -3,7 +3,21 @@ import ProductCard from '@/components/ProductCard';
 import CategoryFilter from '@/components/CategoryFilter';
 import { categories, products } from '@/data/products';
 
-export default function DesignsPage() {
+interface DesignsPageProps {
+  searchParams?: {
+    category?: string;
+  };
+}
+
+export default function DesignsPage({ searchParams }: DesignsPageProps) {
+  const requestedCategory = searchParams?.category;
+  const activeCategory = categories.find((category) => category === requestedCategory) ?? 'All';
+
+  const filteredProducts =
+    activeCategory === 'All'
+      ? products
+      : products.filter((product) => product.category === activeCategory);
+
   return (
     <section className="py-12">
       <Container className="space-y-8">
@@ -11,9 +25,15 @@ export default function DesignsPage() {
           <h1 className="text-3xl font-semibold text-slate-900">All Designs</h1>
           <p className="text-slate-600">Browse our latest fashion sketches and ready-to-style looks.</p>
         </div>
-        <CategoryFilter categories={categories} activeCategory="All" />
+        <CategoryFilter
+          categories={categories}
+          activeCategory={activeCategory}
+          getCategoryHref={(category) =>
+            category === 'All' ? '/designs' : `/designs?category=${encodeURIComponent(category)}`
+          }
+        />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
