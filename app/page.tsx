@@ -44,7 +44,13 @@ export default function HomePage() {
       <section className="pb-4">
         <Container className="space-y-5">
           <h2 className="text-2xl font-semibold text-slate-900">Shop by Category</h2>
-          <CategoryFilter categories={categories} activeCategory="All" />
+          <CategoryFilter
+            categories={categories}
+            activeCategory="All"
+            getCategoryHref={(category) =>
+              category === 'All' ? '/designs' : `/designs?category=${encodeURIComponent(category)}`
+            }
+          />
         </Container>
       </section>
     </>
