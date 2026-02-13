@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Container from '@/components/Container';
 import ProductCard from '@/components/ProductCard';
-import CategoryFilter from '@/components/CategoryFilter';
+import CategoryHamburger from '@/components/CategoryHamburger';
 import Button from '@/components/Button';
 import { categories, products } from '@/data/products';
 
@@ -14,13 +14,7 @@ export default function HomePage() {
         <Container className="space-y-3">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-700">Shop by Category</h2>
           <div className="flex justify-start">
-            <CategoryFilter
-              categories={categories}
-              activeCategory="All"
-              getCategoryHref={(category) =>
-                category === 'All' ? '/designs' : `/designs?category=${encodeURIComponent(category)}`
-              }
-            />
+            <CategoryHamburger categories={categories} />
           </div>
         </Container>
       </section>
