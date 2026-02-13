@@ -1,0 +1,7 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fashion design artwork">
+  <rect width="800" height="1000" fill="#E2E8F0"/>
+  <circle cx="400" cy="350" r="180" fill="#C4B5FD"/>
+  <path d="M250 780C260 620 540 620 550 780H250Z" fill="#7C3AED"/>
+  <rect x="330" y="220" width="140" height="320" rx="70" fill="#A78BFA"/>
+  <text x="400" y="920" text-anchor="middle" fill="#1E293B" font-size="42" font-family="Arial, sans-serif">DESIGN</text>
+</svg>
