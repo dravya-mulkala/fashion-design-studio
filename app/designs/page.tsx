@@ -4,13 +4,14 @@ import CategoryFilter from '@/components/CategoryFilter';
 import { categories, products } from '@/data/products';
 
 interface DesignsPageProps {
-  searchParams?: {
+  searchParams?: Promise<{
     category?: string;
-  };
+  }>;
 }
 
-export default function DesignsPage({ searchParams }: DesignsPageProps) {
-  const requestedCategory = searchParams?.category;
+export default async function DesignsPage({ searchParams }: DesignsPageProps) {
+  const resolvedSearchParams = await searchParams;
+  const requestedCategory = resolvedSearchParams?.category;
   const activeCategory = categories.find((category) => category === requestedCategory) ?? 'All';
 
   const filteredProducts =
