@@ -1,14 +1,17 @@
 import Link from 'next/link';
-import Container from './Container';
+import CategoryHamburger from './CategoryHamburger';
+import { categories } from '@/data/products';
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="text-lg font-semibold tracking-wide text-slate-900">
-          Fashion Design Studio
-        </Link>
-        <nav aria-label="Main navigation" className="flex items-center gap-5 text-sm text-slate-600">
+      <div className="flex h-16 items-center justify-between pl-0 pr-4 sm:pr-6 lg:pr-8">
+        <CategoryHamburger categories={categories} />
+
+        <nav
+          aria-label="Main navigation"
+          className="flex flex-wrap items-center justify-end gap-3 text-xs text-slate-600 sm:gap-5 sm:text-sm"
+        >
           <Link href="/" className="hover:text-accent">
             Home
           </Link>
@@ -18,8 +21,14 @@ export default function Navbar() {
           <Link href="/cart" className="hover:text-accent">
             Cart
           </Link>
+          <Link href="/login" className="hover:text-accent">
+            Login
+          </Link>
+          <Link href="/register" className="hover:text-accent">
+            Register
+          </Link>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 }
