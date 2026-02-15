@@ -8,7 +8,11 @@ export default function Navbar() {
         <Link href="/" className="text-lg font-semibold tracking-wide text-slate-900">
           Fashion Design Studio
         </Link>
-        <nav aria-label="Main navigation" className="flex items-center gap-5 text-sm text-slate-600">
+
+        <nav
+          aria-label="Main navigation"
+          className="flex flex-wrap items-center justify-end gap-3 text-xs text-slate-600 sm:gap-5 sm:text-sm"
+        >
           <Link href="/" className="hover:text-accent">
             Home
           </Link>
@@ -17,6 +21,12 @@ export default function Navbar() {
           </Link>
           <Link href="/cart" className="hover:text-accent">
             Cart
+          </Link>
+          <Link href="/login" className="hover:text-accent">
+            Login
+          </Link>
+          <Link href="/register" className="hover:text-accent">
+            Register
           </Link>
         </nav>
       </Container>
