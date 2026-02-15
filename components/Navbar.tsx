@@ -1,12 +1,11 @@
 import Link from 'next/link';
-import Container from './Container';
 import CategoryHamburger from './CategoryHamburger';
 import { categories } from '@/data/products';
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between gap-3">
+      <div className="flex h-16 items-center justify-between pl-0 pr-4 sm:pr-6 lg:pr-8">
         <CategoryHamburger categories={categories} />
 
         <nav
@@ -29,7 +28,7 @@ export default function Navbar() {
             Register
           </Link>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 }
