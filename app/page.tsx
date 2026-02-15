@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Container from '@/components/Container';
 import ProductCard from '@/components/ProductCard';
-import CategoryFilter from '@/components/CategoryFilter';
 import Button from '@/components/Button';
-import { categories, products } from '@/data/products';
+import { products } from '@/data/products';
 
 export default function HomePage() {
   const featured = products.filter((product) => product.featured).slice(0, 4);
@@ -38,13 +37,6 @@ export default function HomePage() {
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-        </Container>
-      </section>
-
-      <section className="pb-4">
-        <Container className="space-y-5">
-          <h2 className="text-2xl font-semibold text-slate-900">Shop by Category</h2>
-          <CategoryFilter categories={categories} activeCategory="All" />
         </Container>
       </section>
     </>
