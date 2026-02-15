@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Container from './Container';
+import CategoryHamburger from './CategoryHamburger';
+import { categories } from '@/data/products';
 
 export default function Navbar() {
   return (
@@ -29,7 +30,7 @@ export default function Navbar() {
             Register
           </Link>
         </nav>
-      </Container>
+      </div>
     </header>
   );
 }
