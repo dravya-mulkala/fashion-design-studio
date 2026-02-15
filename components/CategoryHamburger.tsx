@@ -46,7 +46,7 @@ export default function CategoryHamburger({ categories }: CategoryHamburgerProps
 
           <aside
             id="category-side-menu"
-            className="absolute left-0 top-0 h-full w-80 max-w-[85vw] overflow-y-auto border-r border-slate-200 bg-white p-4 shadow-2xl"
+            className="absolute left-0 top-0 h-full w-80 max-w-[85vw] border-r border-slate-200 bg-white p-4 shadow-2xl"
             role="dialog"
             aria-label="Shop by Category side menu"
           >

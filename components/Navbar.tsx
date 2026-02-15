@@ -11,7 +11,7 @@ export default function Navbar() {
 
         <nav
           aria-label="Main navigation"
-          className="flex items-center gap-3 overflow-x-auto text-xs text-slate-600 sm:gap-5 sm:text-sm"
+          className="flex flex-wrap items-center justify-end gap-3 text-xs text-slate-600 sm:gap-5 sm:text-sm"
         >
           <Link href="/" className="hover:text-accent">
             Home
