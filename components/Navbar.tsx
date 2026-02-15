@@ -5,8 +5,10 @@ import { categories } from '@/data/products';
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="flex h-16 items-center justify-between pl-0 pr-4 sm:pr-6 lg:pr-8">
-        <CategoryHamburger categories={categories} />
+      <Container className="flex h-16 items-center justify-between">
+        <Link href="/" className="text-lg font-semibold tracking-wide text-slate-900">
+          Fashion Design Studio
+        </Link>
 
         <nav
           aria-label="Main navigation"
