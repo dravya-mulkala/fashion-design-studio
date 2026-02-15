@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Container from '@/components/Container';
 import ProductCard from '@/components/ProductCard';
-import CategoryHamburger from '@/components/CategoryHamburger';
 import Button from '@/components/Button';
-import { categories, products } from '@/data/products';
+import { products } from '@/data/products';
 
 export default function HomePage() {
   const featured = products.filter((product) => product.featured).slice(0, 4);
